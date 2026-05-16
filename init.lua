@@ -109,7 +109,7 @@ do
   vim.o.number = true
   -- You can also add relative line numbers, to help with jumping.
   --  Experiment for yourself to see if you like it!
-  -- vim.o.relativenumber = true
+  vim.o.relativenumber = true
 
   -- Enable mouse mode, can be useful for resizing splits for example!
   vim.o.mouse = 'a'
@@ -125,6 +125,11 @@ do
 
   -- Enable break indent
   vim.o.breakindent = true
+
+  -- Indents
+  --vim.opt.tabstop = 8
+  --vim.opt.softtabstop = 4
+  --vim.opt.shiftwidth = 2
 
   -- Enable undo/redo changes even after closing and reopening a file
   vim.o.undofile = true
@@ -171,6 +176,11 @@ do
   -- See `:help 'confirm'`
   vim.o.confirm = true
 
+
+  --vim.opt.autoindent = true
+  --vim.opt.ts = 4
+  --vim.opt.sw = 4
+  --vim.opt.expandtab = true
   -- [[ Basic Keymaps ]]
   --  See `:help vim.keymap.set()`
 
@@ -377,6 +387,8 @@ do
   -- since otherwise the icons won't display properly.
   if vim.g.have_nerd_font then vim.pack.add { gh 'nvim-tree/nvim-web-devicons' } end
 
+  vim.pack.add { 'https://github.com/vyfor/cord.nvim' }
+  require('cord').setup {}
   -- Here is a more advanced configuration example that passes options to `gitsigns.nvim`
   --
   -- See `:help gitsigns` to understand what each configuration key does.
