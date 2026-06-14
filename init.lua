@@ -523,6 +523,7 @@ do
   }
   if vim.fn.executable 'make' == 1 then table.insert(telescope_plugins, gh 'nvim-telescope/telescope-fzf-native.nvim') end
 
+  vim.pack.add{gh 'sakhnik/nvim-gdb'}
   -- NOTE: You can install multiple plugins at once
   vim.pack.add(telescope_plugins)
 
@@ -616,6 +617,9 @@ do
     end,
     { desc = '[S]earch [/] in Open Files' }
   )
+
+  vim.keymap.set('n', '<leader>wts', '<C-w>s:terminal<CR><C-w>10-', { desc = 'open terminal in horizontally split window'})
+  vim.keymap.set('n', '<leader>wtv', '<C-w>v:terminal<CR><C-w>15<', { desc = 'open terminal in vertically split window'})
 
   -- Shortcut for searching your Neovim configuration files
   vim.keymap.set('n', '<leader>sn', function() builtin.find_files { cwd = vim.fn.stdpath 'config' } end, { desc = '[S]earch [N]eovim files' })
